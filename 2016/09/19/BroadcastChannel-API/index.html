@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | DevBoosts</title>
+  <title>BroadcastChannel API | DevBoosts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://devboosts.com/2017/02/01/hello-world/index.html">
+<meta property="og:title" content="BroadcastChannel API">
+<meta property="og:url" content="http://devboosts.com/2016/09/19/BroadcastChannel-API/index.html">
 <meta property="og:site_name" content="DevBoosts">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-02-02T00:27:38.321Z">
+<meta property="og:description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
+<meta property="og:updated_time" content="2017-02-02T01:31:48.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="BroadcastChannel API">
+<meta name="twitter:description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
   
     <link rel="alternate" href="/atom.xml" title="DevBoosts" type="application/atom+xml">
   
@@ -66,10 +63,10 @@ Quick">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-BroadcastChannel-API" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/02/01/hello-world/" class="article-date">
-  <time datetime="2017-02-02T00:27:38.318Z" itemprop="datePublished">02-01-2017</time>
+    <a href="/2016/09/19/BroadcastChannel-API/" class="article-date">
+  <time datetime="2016-09-20T00:28:50.000Z" itemprop="datePublished">09-19-2016</time>
 </a>
     
   </div>
@@ -80,7 +77,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      BroadcastChannel API
     </h1>
   
 
@@ -88,33 +85,38 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
+<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
+<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
+<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
+<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
+<p>BroadcastChannel API Browser Support</p>
+<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://devboosts.com/2017/02/01/hello-world/" data-id="ciynq3kev00039kuwv4qtwhdx" class="article-share-link">Share</a>
+      <a data-url="http://devboosts.com/2016/09/19/BroadcastChannel-API/" data-id="ciynq3keh00009kuwnptsjb3h" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-Browser-APIs/">JavaScript, Browser APIs</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-  
-    <a href="/2016/09/19/BroadcastChannel-API/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">BroadcastChannel API</div>
+    <a href="/2017/02/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
     </a>
+  
   
 </nav>
 

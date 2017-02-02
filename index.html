@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>DevBoosts</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+  <meta name="description" content="A blog about Web Development and Angular">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DevBoosts">
+<meta property="og:url" content="http://devboosts.com/index.html">
+<meta property="og:site_name" content="DevBoosts">
+<meta property="og:description" content="A blog about Web Development and Angular">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="DevBoosts">
+<meta name="twitter:description" content="A blog about Web Development and Angular">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="DevBoosts" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,7 +36,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">DevBoosts</a>
       </h1>
       
     </div>
@@ -53,7 +56,7 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://devboosts.com"></form>
       </div>
     </div>
   </div>
@@ -64,7 +67,7 @@
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/01/hello-world/" class="article-date">
-  <time datetime="2017-02-02T00:27:38.318Z" itemprop="datePublished">2017-02-01</time>
+  <time datetime="2017-02-02T00:27:38.318Z" itemprop="datePublished">02-01-2017</time>
 </a>
     
   </div>
@@ -96,9 +99,55 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/02/01/hello-world/" data-id="ciynnbl7p0000gcuwb0gdrn9s" class="article-share-link">Share</a>
+      <a data-url="http://devboosts.com/2017/02/01/hello-world/" data-id="ciynq3kev00039kuwv4qtwhdx" class="article-share-link">Share</a>
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-BroadcastChannel-API" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/19/BroadcastChannel-API/" class="article-date">
+  <time datetime="2016-09-20T00:28:50.000Z" itemprop="datePublished">09-19-2016</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/19/BroadcastChannel-API/">BroadcastChannel API</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
+<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
+<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
+<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
+<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
+<p>BroadcastChannel API Browser Support</p>
+<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://devboosts.com/2016/09/19/BroadcastChannel-API/" data-id="ciynq3keh00009kuwnptsjb3h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript-Browser-APIs/">JavaScript, Browser APIs</a></li></ul>
+
     </footer>
   </div>
   
@@ -115,15 +164,29 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript-Browser-APIs/">JavaScript, Browser APIs</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript-Browser-APIs/" style="font-size: 10px;">JavaScript, Browser APIs</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li></ul>
     </div>
   </div>
 
@@ -139,6 +202,10 @@
             <a href="/2017/02/01/hello-world/">Hello World</a>
           </li>
         
+          <li>
+            <a href="/2016/09/19/BroadcastChannel-API/">BroadcastChannel API</a>
+          </li>
+        
       </ul>
     </div>
   </div>
@@ -151,7 +218,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
+      &copy; 2017 Chaz Gatian<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
