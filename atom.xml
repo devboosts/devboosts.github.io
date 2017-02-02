@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DevBoosts</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://devboosts.com/"/>
+  <updated>2017-02-02T01:57:25.739Z</updated>
+  <id>http://devboosts.com/</id>
+  
+  <author>
+    <name>Chaz Gatian</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Angular vs AngularJS i18n</title>
+    <link href="http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/"/>
+    <id>http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/</id>
+    <published>2016-09-29T00:54:17.000Z</published>
+    <updated>2017-02-02T01:57:25.739Z</updated>
+    
+    <content type="html"><![CDATA[<p>I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to perform date and currency conversions.  This allows language specific formatting to be preformed directly by the browser.</p>
+<p>To contrast, in AngularJS a developer would be required to load a culture specific helper script that would provide the proper formats per culture.  With Angular and a modern browser, this is functionality is supported out-of-the-box.</p>
+<p>The Internationalization API is supported in the following browsers, to get Angular pipes to work with older IE and Safari 9 a polyfill is required.</p>
+<p>Can I Use internationalization? <a href="http://caniuse.com/#feat=internationalization" target="_blank" rel="external">Checkout the support</a> for the internationalization API across the major browsers from <a href="http://caniuse.com" target="_blank" rel="external">caniuse.com</a>.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted 
+    
+    </summary>
+    
+    
+      <category term="Angular, Browser APIs" scheme="http://devboosts.com/tags/Angular-Browser-APIs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>core-js Merged into Angular</title>
+    <link href="http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/"/>
+    <id>http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/</id>
+    <published>2016-09-22T00:50:29.000Z</published>
+    <updated>2017-02-02T01:55:06.319Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://github.com/zloirock/core-js" target="_blank" rel="external">core-js</a> is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web comm<br>Previously, it has gained serious reputation by use of Babel, which utilizes it for many of its polyfills.<br><a href="https://github.com/angular/angular/commit/66df335998d097fa8fe46dec41f1183737332021" target="_blank" rel="external">Most recently</a>, it was pulled into Angular as the de facto standard for shimming older IE 9-10 with ES2015 features.</p>
+<p>What makes core-js unique is how beautifully architected it is.  Each polyfill can be pulled in individually, making it a truly modular library.  As with other libraries such as es6-shim a developer would need to require the entire library to make use of one ES2015 feature like promises.  With core-js a developer can simply import a Promise polyfill with one import.</p>
+<p>For example, using a bundler such as Webpack, you can compose your own polyfill.js with only the polyfills the application requires.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/map'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/set'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/weak-map'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/promise'</span>);</div></pre></td></tr></table></figure></p>
+<p>More impressively core-js’s <a href="https://github.com/zloirock/core-js#supported-engines" target="_blank" rel="external">browser support</a> goes all the way back to IE6.</p>
+<p>If you’re looking for a one-stop shop library to provide polyfills, core-js is it!</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/zloirock/core-js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;core-js&lt;/a&gt; is a modular library created by Denis Pushkarev 
+    
+    </summary>
+    
+    
+      <category term="Angular" scheme="http://devboosts.com/tags/Angular/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BroadcastChannel API</title>
+    <link href="http://devboosts.com/2016/09/19/BroadcastChannel-API/"/>
+    <id>http://devboosts.com/2016/09/19/BroadcastChannel-API/</id>
+    <published>2016-09-20T00:28:50.000Z</published>
+    <updated>2017-02-02T01:31:48.995Z</updated>
+    
+    <content type="html"><![CDATA[<p>Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
+<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
+<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
+<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
+<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
+<p>BroadcastChannel API Browser Support</p>
+<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API 
+    
+    </summary>
+    
+    
+      <category term="JavaScript, Browser APIs" scheme="http://devboosts.com/tags/JavaScript-Browser-APIs/"/>
+    
+  </entry>
+  
+</feed>

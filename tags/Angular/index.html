@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DevBoosts">
-    <title>DevBoosts</title>
+    <title>Tag: Angular - DevBoosts</title>
     <meta name="author" content="Chaz Gatian">
     
         <meta name="keywords" content="Angular,javascript,">
@@ -18,7 +18,7 @@
     <meta name="description" content="A blog about Web Development and Angular">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="DevBoosts">
-<meta property="og:url" content="http://devboosts.com/index.html">
+<meta property="og:url" content="http://devboosts.com/tags/Angular/index.html">
 <meta property="og:site_name" content="DevBoosts">
 <meta property="og:description" content="A blog about Web Development and Angular">
 <meta name="twitter:card" content="summary">
@@ -190,53 +190,9 @@
                         hasCoverMetaIn
                         ">
                 
+    
 
 <section class="postShorten-group main-content-wrap">
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/09/28/Angular-vs-AngularJS-i18n/">
-                            Angular vs AngularJS i18n
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-09-28T20:54:17-04:00">
-	
-		    Sep 28, 2016
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to perform date and currency conversions.  This allows language specific formatting to be preformed directly by the browser.</p>
-<p>To contrast, in AngularJS a developer would be required to load a culture specific helper script that would provide the proper formats per culture.  With Angular and a modern browser, this is functionality is supported out-of-the-box.</p>
-<p>The Internationalization API is supported in the following browsers, to get Angular pipes to work with older IE and Safari 9 a polyfill is required.</p>
-<p>Can I Use internationalization? <a href="http://caniuse.com/#feat=internationalization" target="_blank" rel="external">Checkout the support</a> for the internationalization API across the major browsers from <a href="http://caniuse.com" target="_blank" rel="external">caniuse.com</a>.</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/09/28/Angular-vs-AngularJS-i18n/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
     
     
     <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
@@ -274,55 +230,6 @@
                     
                         <p>
                             <a href="/2016/09/21/core-js-Merged-into-Angular/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
-        
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2016/09/19/BroadcastChannel-API/">
-                            BroadcastChannel API
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2016-09-19T20:28:50-04:00">
-	
-		    Sep 19, 2016
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
-<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
-<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
-<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
-<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
-<p>BroadcastChannel API Browser Support</p>
-<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
-
-                    
-                        
-                    
-                    
-                        <p>
-                            <a href="/2016/09/19/BroadcastChannel-API/#post-footer" class="postShorten-excerpt_link link">
                                 Comment and share
                             </a>
                         </p>

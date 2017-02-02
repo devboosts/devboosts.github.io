@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DevBoosts">
-    <title>BroadcastChannel API - DevBoosts</title>
+    <title>core-js Merged into Angular - DevBoosts</title>
     <meta name="author" content="Chaz Gatian">
     
         <meta name="keywords" content="Angular,javascript,">
@@ -15,16 +15,16 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
+    <meta name="description" content="core-js is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web commPreviously, it has gained serious reputation by use of Babel, which utilizes it for many o">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="BroadcastChannel API">
-<meta property="og:url" content="http://devboosts.com/2016/09/19/BroadcastChannel-API/index.html">
+<meta property="og:title" content="core-js Merged into Angular">
+<meta property="og:url" content="http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/index.html">
 <meta property="og:site_name" content="DevBoosts">
-<meta property="og:description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
-<meta property="og:updated_time" content="2017-02-02T01:31:48.995Z">
+<meta property="og:description" content="core-js is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web commPreviously, it has gained serious reputation by use of Babel, which utilizes it for many o">
+<meta property="og:updated_time" content="2017-02-02T01:55:06.319Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BroadcastChannel API">
-<meta name="twitter:description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
+<meta name="twitter:title" content="core-js Merged into Angular">
+<meta name="twitter:description" content="core-js is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web commPreviously, it has gained serious reputation by use of Babel, which utilizes it for many o">
 <meta name="twitter:creator" content="@cgatian">
     
     
@@ -197,13 +197,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            BroadcastChannel API
+            core-js Merged into Angular
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-09-19T20:28:50-04:00">
+    <time itemprop="datePublished" datetime="2016-09-21T20:50:29-04:00">
 	
-		    Sep 19, 2016
+		    Sep 21, 2016
     	
     </time>
     
@@ -213,14 +213,11 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
-<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
-<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
-<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
-<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
-<p>BroadcastChannel API Browser Support</p>
-<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
+            <p><a href="https://github.com/zloirock/core-js" target="_blank" rel="external">core-js</a> is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web comm<br>Previously, it has gained serious reputation by use of Babel, which utilizes it for many of its polyfills.<br><a href="https://github.com/angular/angular/commit/66df335998d097fa8fe46dec41f1183737332021" target="_blank" rel="external">Most recently</a>, it was pulled into Angular as the de facto standard for shimming older IE 9-10 with ES2015 features.</p>
+<p>What makes core-js unique is how beautifully architected it is.  Each polyfill can be pulled in individually, making it a truly modular library.  As with other libraries such as es6-shim a developer would need to require the entire library to make use of one ES2015 feature like promises.  With core-js a developer can simply import a Promise polyfill with one import.</p>
+<p>For example, using a bundler such as Webpack, you can compose your own polyfill.js with only the polyfills the application requires.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/map'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/set'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/weak-map'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/promise'</span>);</div></pre></td></tr></table></figure></p>
+<p>More impressively core-js’s <a href="https://github.com/zloirock/core-js#supported-engines" target="_blank" rel="external">browser support</a> goes all the way back to IE6.</p>
+<p>If you’re looking for a one-stop shop library to provide polyfills, core-js is it!</p>
 
             
         </div>
@@ -230,7 +227,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/JavaScript-Browser-APIs/">JavaScript, Browser APIs</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Angular/">Angular</a>
 
             </div>
         
@@ -239,7 +236,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/21/core-js-Merged-into-Angular/"  data-tooltip="core-js Merged into Angular">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/Angular-vs-AngularJS-i18n/"  data-tooltip="Angular vs AngularJS i18n">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -247,7 +244,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/19/BroadcastChannel-API/" data-tooltip="BroadcastChannel API">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -262,17 +259,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -310,7 +307,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/21/core-js-Merged-into-Angular/"  data-tooltip="core-js Merged into Angular">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/Angular-vs-AngularJS-i18n/"  data-tooltip="Angular vs AngularJS i18n">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -318,7 +315,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/19/BroadcastChannel-API/" data-tooltip="BroadcastChannel API">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -333,17 +330,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -363,17 +360,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/19/BroadcastChannel-API/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/21/core-js-Merged-into-Angular/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>
