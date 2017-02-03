@@ -4783,5 +4783,8 @@ figure.highlight,
 */
 
 #sidebar {
-  background-color:red;
+  background-color:#515151;
 }
+     .code {
+font-family: monospace;
+         }
