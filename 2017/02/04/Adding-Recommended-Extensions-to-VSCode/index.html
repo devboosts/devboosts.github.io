@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DevBoosts">
-    <title>Angular vs AngularJS i18n - DevBoosts</title>
+    <title>Adding Recommended Extensions to VS Code - DevBoosts</title>
     <meta name="author" content="Chaz Gatian">
     
         <meta name="keywords" content="Angular,javascript,">
@@ -17,16 +17,18 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to per">
+    <meta name="description" content="One of my favorite aspects of Visual Studio Code is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t liv">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Angular vs AngularJS i18n">
-<meta property="og:url" content="http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/index.html">
+<meta property="og:title" content="Adding Recommended Extensions to VS Code">
+<meta property="og:url" content="http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/index.html">
 <meta property="og:site_name" content="DevBoosts">
-<meta property="og:description" content="I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to per">
-<meta property="og:updated_time" content="2017-02-02T01:57:25.739Z">
+<meta property="og:description" content="One of my favorite aspects of Visual Studio Code is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t liv">
+<meta property="og:image" content="http://devboosts.com/assets/images/_vs-code.jpg">
+<meta property="og:updated_time" content="2017-02-04T20:09:24.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Angular vs AngularJS i18n">
-<meta name="twitter:description" content="I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to per">
+<meta name="twitter:title" content="Adding Recommended Extensions to VS Code">
+<meta name="twitter:description" content="One of my favorite aspects of Visual Studio Code is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t liv">
+<meta name="twitter:image" content="http://devboosts.com/assets/images/_vs-code.jpg">
 <meta name="twitter:creator" content="@cgatian">
     
     
@@ -199,13 +201,13 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            Angular vs AngularJS i18n
+            Adding Recommended Extensions to VS Code
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-09-28T20:54:17-04:00">
+    <time itemprop="datePublished" datetime="2017-02-04T14:53:00-05:00">
 	
-		    Sep 28, 2016
+		    Feb 04, 2017
     	
     </time>
     
@@ -215,10 +217,13 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to perform date and currency conversions.  This allows language specific formatting to be preformed directly by the browser.</p>
-<p>To contrast, in AngularJS a developer would be required to load a culture specific helper script that would provide the proper formats per culture.  With Angular and a modern browser, this is functionality is supported out-of-the-box.</p>
-<p>The Internationalization API is supported in the following browsers, to get Angular pipes to work with older IE and Safari 9 a polyfill is required.</p>
-<p>Can I Use internationalization? <a href="http://caniuse.com/#feat=internationalization" target="_blank" rel="external">Checkout the support</a> for the internationalization API across the major browsers from <a href="http://caniuse.com" target="_blank" rel="external">caniuse.com</a>.</p>
+            <p>One of my favorite aspects of <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t live without.</p>
+<p>When developing an application with a framework like Angular there may be a handful of extensions you and your team find useful to use. It’s actually quite easy to share these extensions with other teamates.</p>
+<p>Open the command pallet (<code>F1</code>) and type <code>Extensions: Configured Recommended Extensions (Workspace)</code>. This will create a file named <code>extensions.json</code> in your <code>.vscode</code> folder. Edit the file by supplying a list of extensions by <code>${publisher}.${name}</code>. </p>
+<p><img src="/assets/images/_vs-code.jpg" alt="Publisher location" title="Publisher location"></p>
+<figure class="highlight javascript"><figcaption><span>extensions.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="comment">// See http://go.microsoft.com/fwlink/?LinkId=827846</span></div><div class="line">	<span class="comment">// for the documentation about the extensions.json format</span></div><div class="line">	<span class="string">"recommendations"</span>: [</div><div class="line">		<span class="comment">// Extension identifier format: $&#123;publisher&#125;.$&#123;name&#125;. Example: vscode.csharp</span></div><div class="line">		msjsdiag.debugger-<span class="keyword">for</span>-chrome  <span class="comment">// Debugging In Chrome</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The publisher of the extension is listed beside the extension name when you open the extension in the Marketplace. Add a comment next to each extension to specify why the extension is useful. Save and commit to your repository.</p>
+<p>Next time a team member opens the code they will be greeted with a message from VS Code to install the workspace’s recommended extensions. </p>
 
             
         </div>
@@ -228,7 +233,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Angular-Browser-APIs/">Angular, Browser APIs</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/VS-Code-Boost/">VS Code, Boost</a>
 
             </div>
         
@@ -237,7 +242,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/04/Adding-Recommended-Extensions-to-VSCode/"  data-tooltip="Adding Recommended Extensions to VS Code">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -245,7 +250,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/21/core-js-Merged-into-Angular/" data-tooltip="core-js Merged into Angular">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/Angular-vs-AngularJS-i18n/" data-tooltip="Angular vs AngularJS i18n">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -260,17 +265,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -308,7 +313,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/02/04/Adding-Recommended-Extensions-to-VSCode/"  data-tooltip="Adding Recommended Extensions to VS Code">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -316,7 +321,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/21/core-js-Merged-into-Angular/" data-tooltip="core-js Merged into Angular">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/Angular-vs-AngularJS-i18n/" data-tooltip="Angular vs AngularJS i18n">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -331,17 +336,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -361,17 +366,17 @@
                 <div id="share-options-bar" class="share-options-bar" data-behavior="3">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2016/09/28/Angular-vs-AngularJS-i18n/">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
                 <i class="fa fa-twitter"></i><span>Share on Twitter</span>
             </a>
         </li>

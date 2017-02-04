@@ -203,6 +203,52 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2017/02/04/Adding-Recommended-Extensions-to-VSCode/">
+                            Adding Recommended Extensions to VS Code
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2017-02-04T14:53:00-05:00">
+	
+		    Feb 04, 2017
+    	
+    </time>
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>One of my favorite aspects of <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t live without.</p>
+<p>When developing an application with a framework like Angular there may be a handful of extensions you and your team find useful to use. It’s actually quite easy to share these extensions with other teamates.</p>
+<p>Open the command pallet (<code>F1</code>) and type <code>Extensions: Configured Recommended Extensions (Workspace)</code>. This will create a file named <code>extensions.json</code> in your <code>.vscode</code> folder. Edit the file by supplying a list of extensions by <code>${publisher}.${name}</code>. </p>
+<p><img src="/assets/images/_vs-code.jpg" alt="Publisher location" title="Publisher location"></p>
+<figure class="highlight javascript"><figcaption><span>extensions.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="comment">// See http://go.microsoft.com/fwlink/?LinkId=827846</span></div><div class="line">	<span class="comment">// for the documentation about the extensions.json format</span></div><div class="line">	<span class="string">"recommendations"</span>: [</div><div class="line">		<span class="comment">// Extension identifier format: $&#123;publisher&#125;.$&#123;name&#125;. Example: vscode.csharp</span></div><div class="line">		msjsdiag.debugger-<span class="keyword">for</span>-chrome  <span class="comment">// Debugging In Chrome</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The publisher of the extension is listed beside the extension name when you open the extension in the Marketplace. Add a comment next to each extension to specify why the extension is useful. Save and commit to your repository.</p>
+<p>Next time a team member opens the code they will be greeted with a message from VS Code to install the workspace’s recommended extensions. </p>
+
+                    
+                    
+                        <p>
+                            <a href="/2017/02/04/Adding-Recommended-Extensions-to-VSCode/#post-footer" class="postShorten-excerpt_link link">
+                                Comment and share
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2016/09/28/Angular-vs-AngularJS-i18n/">
                             Angular vs AngularJS i18n
                         </a>
