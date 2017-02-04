@@ -22,7 +22,7 @@
 <meta property="og:site_name" content="DevBoosts">
 <meta property="og:description" content="One of my favorite aspects of Visual Studio Code is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t liv">
 <meta property="og:image" content="http://devboosts.com/assets/images/vs-code.jpg">
-<meta property="og:updated_time" content="2017-02-04T21:15:02.000Z">
+<meta property="og:updated_time" content="2017-02-04T21:36:49.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Adding Recommended Extensions to VS Code">
 <meta name="twitter:description" content="One of my favorite aspects of Visual Studio Code is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t liv">
@@ -216,7 +216,7 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>One of my favorite aspects of <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t live without.</p>
-<p>When developing an application with a framework like Angular there may be a handful of extensions you and your team find useful to use. It’s actually quite easy to share these extensions with other teamates.</p>
+<p>When developing an application with a framework like Angular, there may be a handful of extensions your team finds useful to use. VS Code makes sharing these extentions is actually quite easy.</p>
 <p>Open the command pallet (<code>F1</code>) and type <code>Extensions: Configured Recommended Extensions (Workspace)</code>. This will create a file named <code>extensions.json</code> in your <code>.vscode</code> folder. Edit the file by supplying a list of extensions by <code>${publisher}.${name}</code>. </p>
 <img src="/assets/images/vs-code.jpg">
 <figure class="highlight javascript"><figcaption><span>extensions.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="comment">// See http://go.microsoft.com/fwlink/?LinkId=827846</span></div><div class="line">	<span class="comment">// for the documentation about the extensions.json format</span></div><div class="line">	<span class="string">"recommendations"</span>: [</div><div class="line">		<span class="comment">// Extension identifier format: $&#123;publisher&#125;.$&#123;name&#125;. Example: vscode.csharp</span></div><div class="line">		msjsdiag.debugger-<span class="keyword">for</span>-chrome  <span class="comment">// Debugging In Chrome</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
