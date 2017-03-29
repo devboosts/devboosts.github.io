@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://devboosts.com/"/>
-  <updated>2017-02-08T10:19:31.686Z</updated>
+  <updated>2017-03-29T00:07:44.595Z</updated>
   <id>http://devboosts.com/</id>
   
   <author>
@@ -14,6 +14,74 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Conventional Commits</title>
+    <link href="http://devboosts.com/2017/03/28/conventional-commits/"/>
+    <id>http://devboosts.com/2017/03/28/conventional-commits/</id>
+    <published>2017-03-29T00:07:57.000Z</published>
+    <updated>2017-03-29T00:07:44.595Z</updated>
+    
+    <content type="html"><![CDATA[<p>If you’ve been following the recent Angular release canidates you can’t help but admire the changelog they are able to produce. Each version published has a nicely formated list of bugs, features, and breaking changes. How they were able to generate this type of changelog really interested me into digging deeper into their process and conventions. It turns out, implementing something like this into your workflow is actually quite simple.</p>
+<h3 id="Standarizing-Commit-Messages"><a href="#Standarizing-Commit-Messages" class="headerlink" title="Standarizing Commit Messages"></a>Standarizing Commit Messages</h3><p>The first step is to start utilizing a convention when commiting changes to your codebase. The easiest way is to use the <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/preview" target="_blank" rel="external">conventions</a> created by the AngularJS team.</p>
+<p>A more readable form of this can be found from Angular Material team’s <a href="https://github.com/angular/material2/blob/master/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="external">Code Convention Guidelines</a>. At a minimum, each commit message contains a <em>type</em>, <em>scope</em> and <em>subject</em>.  In the following format:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</div></pre></td></tr></table></figure>
+<h3 id="Add-Tooling"><a href="#Add-Tooling" class="headerlink" title="Add Tooling"></a>Add Tooling</h3><p>Making sure we commit changes using this format can be teadius at first. To make life easier add <a href="http://Commitizen.github.io/cz-cli/" target="_blank" rel="external">Commitizen</a> as a development dependency.  This provides a command line utlity that will walk you through each portion of the commit message.</p>
+<p>Install commitizen<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add commitizen -D</div></pre></td></tr></table></figure></p>
+<p>Add <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank" rel="external">conventional-cz</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add cz-conventional-changelog -D</div></pre></td></tr></table></figure></p>
+<p>Update <code>package.json</code><br>First add a new script named commit which executes <code>git-cz</code> (Commitizen)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">scripts : &#123;</div><div class="line">    &quot;commit&quot;: &quot;git-cz&quot;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Then add an additional block called config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;config&quot;: &#123;</div><div class="line">    &quot;commitizen&quot;: &#123;</div><div class="line">      &quot;path&quot;: &quot;cz-conventional-changelog&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Stage your changes by running <code>git add .</code> followed by <code>npm run commit</code>.<br><img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1490656960/conventional-commits1_fc70yy.gif"></p>
+<p>Success!</p>
+<h3 id="Preventing-Poor-Commit-Messages"><a href="#Preventing-Poor-Commit-Messages" class="headerlink" title="Preventing Poor Commit Messages"></a>Preventing Poor Commit Messages</h3><p>Having this tooling is great, but what about that one developer that just doesn’t seem to get it and is stuck in their ways? Thankfully, preventing commits that do not meet the convention is simple to do by installing a <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks" target="_blank" rel="external">git hook</a>. But to be honest, I’ve never configured a Git hook. Thankfully, <a href="https://github.com/typicode/husky" target="_blank" rel="external">Husky</a> makes configuration painless.</p>
+<p>First install Husky:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add husky -D</div></pre></td></tr></table></figure></p>
+<p>Next install <a href="https://github.com/kentcdodds/validate-commit-msg" target="_blank" rel="external">validate-commit-msg</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add validate-commit-msg -D</div></pre></td></tr></table></figure></p>
+<p>Update your <code>package.json</code> scripts:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">scripts: &#123;</div><div class="line">    &quot;commitmsg&quot;: &quot;validate-commit-msg&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Now any commit messages that do not follow the convention will error to the developer.</p>
+<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1490660503/conventional-commits2_vgu3nh.gif">
+<h3 id="Generating-a-Changlog-and-Versioning"><a href="#Generating-a-Changlog-and-Versioning" class="headerlink" title="Generating a Changlog and Versioning"></a>Generating a Changlog and Versioning</h3><p>Now that our project is setup lets see the added benefits this provides. To kick off the next step we are going to install <code>standard-version</code>. This plugin not only will generate the proper version for our project, but it will also create a change log with proper commit hashes, and issue numbers. </p>
+<p>Install standard-version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add standard-version -D</div></pre></td></tr></table></figure></p>
+<p>Update your <code>package.json</code> scripts:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">scripts: &#123;</div><div class="line">    &quot;release&quot;: &quot;standard-version&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>Run <code>npm run release</code>. This will examine your Git history and based off your commits generate the proper version and a CHANGELOG.md.</p>
+<hr>
+<h3 id="Demoing-This-Process-to-Your-Team"><a href="#Demoing-This-Process-to-Your-Team" class="headerlink" title="Demoing This Process to Your Team"></a>Demoing This Process to Your Team</h3><p>To help demo how this would work in the real world, I’ve setup a repository with everything configured. First <a href="https://github.com/devboosts/conventional-commits" target="_blank" rel="external">fork this repository</a>.</p>
+<p>With the newly forked project lets enable Issue tracking. This will give us a feel for how this would work when we collaborate on a real project.</p>
+<ul>
+<li>Open the project’s settings in GitHub and enable <strong>Features &gt; Issues</strong></li>
+<li>Create a new issue called <strong>feat: Implement Footer</strong></li>
+<li>Clone your forked repository</li>
+<li>Verify you’re in the newly created directory and run <code>npm install</code> (or <code>yarn</code>)</li>
+<li>Create a new branch by running <code>git branch feat/footer</code></li>
+<li>Open <code>./src/index.html</code> and add a <code>footer</code> element</li>
+<li>Save your changes</li>
+<li>From the CLI run <code>git add .</code> followed by <code>npm run commit</code></li>
+</ul>
+<p>Follow the prompts adding, using the following information:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">type:feature</div><div class="line">scope: index</div><div class="line">short description: added a footer</div><div class="line">long description: &lt;empty&gt;</div><div class="line">breaking changes: &lt;empty&gt;</div><div class="line">issues closed: &lt;enter your issue number ie. #1&gt;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>Push your changes to GitHub with <code>git push</code></li>
+<li>Next open a pull request and merge your changes in</li>
+</ul>
+<p>Notice the <code>CHANGELOG.md</code> and <code>package.json</code> version are unchanged.  The reason they haven’t been updated is because we need to first cut a release. Let’s do that now.</p>
+<ul>
+<li>From your command line switch back to master by running <code>git branch master</code></li>
+<li>Pull in your latest changes by running <code>git pull</code></li>
+<li>Run <code>npm run release</code></li>
+</ul>
+<p>This runs <a href="https://github.com/conventional-changelog/standard-version" target="_blank" rel="external">standard-version</a> which examines your commit history to properly update the <code>CHANGELOG.md</code>, version in <code>package.json</code>, and tags a branch in your repository.<br>Finally, run <code>git push --follow-tags origin master</code> to push your version changes and tag your repository with this version.</p>
+<h3 id="Beyond…"><a href="#Beyond…" class="headerlink" title="Beyond…"></a>Beyond…</h3><p>Checkout this great <a href="https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen" target="_blank" rel="external">plugin</a> for VSCode. It integrates with commitizen and provides a wizard like experience.</p>
+<p>I haven’t actually tried this out yet, but to take things to the next level you could look into <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="external">semantic-release</a>. It promises fully automated packaging and releasing.  Basically, what standard-version does, with the added benefit of integrations with GitHub and Travis CI.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;If you’ve been following the recent Angular release canidates you can’t help but admire the changelog they are able to produce. Each vers
+    
+    </summary>
+    
+    
+      <category term="Git, Dev Tools" scheme="http://devboosts.com/tags/Git-Dev-Tools/"/>
+    
+  </entry>
   
   <entry>
     <title>Top 10 Angular VS Code Extensions</title>
