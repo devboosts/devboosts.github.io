@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="DevBoosts">
-    <title>Archives: 2017 - DevBoosts</title>
+    <title>Building Material Themed Components - DevBoosts</title>
     <meta name="author" content="Chaz Gatian">
     
         <meta name="keywords" content="Angular,javascript,">
@@ -17,15 +17,22 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="A blog about Web Development and Angular">
+    <meta name="description" content="If you’ve pulled in Material Design Components into your Angular application,you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you ap">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="DevBoosts">
-<meta property="og:url" content="http://devboosts.com/archives/2017/index.html">
+<meta property="og:title" content="Building Material Themed Components">
+<meta property="og:url" content="http://devboosts.com/2017/05/15/building-material-themed-components/index.html">
 <meta property="og:site_name" content="DevBoosts">
-<meta property="og:description" content="A blog about Web Development and Angular">
+<meta property="og:description" content="If you’ve pulled in Material Design Components into your Angular application,you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you ap">
+<meta property="og:image" content="http://res.cloudinary.com/dk1rn2kmf/image/upload/c_scale,h_474/v1494792370/screen1_rgywut.png">
+<meta property="og:image" content="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen2_yzc3ss.png">
+<meta property="og:image" content="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen3_xuq4aq.png">
+<meta property="og:image" content="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen4_rwa6rn.png">
+<meta property="og:image" content="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen5_z2aynk.png">
+<meta property="og:updated_time" content="2017-05-14T20:13:27.501Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DevBoosts">
-<meta name="twitter:description" content="A blog about Web Development and Angular">
+<meta name="twitter:title" content="Building Material Themed Components">
+<meta name="twitter:description" content="If you’ve pulled in Material Design Components into your Angular application,you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you ap">
+<meta name="twitter:image" content="http://res.cloudinary.com/dk1rn2kmf/image/upload/c_scale,h_474/v1494792370/screen1_rgywut.png">
 <meta name="twitter:creator" content="@cgatian">
     
     
@@ -66,7 +73,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="3">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <h1 class="header-title">
         <a class="header-title-link" href="/ ">DevBoosts</a>
@@ -90,7 +97,7 @@
         
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="3">
     
         <div class="sidebar-profile">
             <a href="/#about">
@@ -187,28 +194,21 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
+            <div id="main" data-behavior="3"
                  class="
                         hasCoverMetaIn
                         ">
                 
-    
-
-<section class="postShorten-group main-content-wrap">
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/05/15/building-material-themed-components/">
-                            Building Material Themed Components
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Building Material Themed Components
+        </h1>
+    
+    <div class="post-meta">
     <time itemprop="datePublished" datetime="2017-05-15T10:39:49-04:00">
 	
 		    May 15, 2017
@@ -217,10 +217,11 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>If you’ve pulled in <a href="https://material.angular.io" target="_blank" rel="external">Material Design Components</a> into your Angular application,<br>you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you application.<br>In this post I will show you how to create themed components using the existing theme mixins provided by Material.<br>This will not work if you’re using one of the built-in themes.</p>
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>If you’ve pulled in <a href="https://material.angular.io" target="_blank" rel="external">Material Design Components</a> into your Angular application,<br>you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you application.<br>In this post I will show you how to create themed components using the existing theme mixins provided by Material.<br>This will not work if you’re using one of the built-in themes.</p>
 <p>If you already know the basics you can skip down to <a href="#building-theme">Building a Themed Component</a></p>
 <h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>For this project we are going to use the <a href="https://github.com/angular/angular-cli" target="_blank" rel="external">Angular CLI</a> to build your project. However, this tutorial will work with any project.</p>
 <p>To start create a fresh Angular CLI project and follow the <a href="https://material.angular.io/guide/getting-started" target="_blank" rel="external">Getting Started Guide</a> <strong>steps one through three</strong>. </p>
@@ -249,199 +250,87 @@
 <p>Open <code>theme.scss</code> and import the mixin.<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">'~@angular/material/theming'</span>;</div><div class="line"><span class="comment">// Imports the custom mixin</span></div><div class="line">@<span class="keyword">import</span> <span class="string">'./app/components/user/user.component-theme'</span>;</div><div class="line"></div><div class="line">@<span class="keyword">include</span> mat-core();</div><div class="line"></div><div class="line"><span class="variable">$candy-app-primary</span>: mat-palette(<span class="variable">$mat-indigo</span>);</div><div class="line"><span class="variable">$candy-app-accent</span>:  mat-palette(<span class="variable">$mat-pink</span>, A200, A100, A400);</div><div class="line"><span class="variable">$candy-app-warn</span>:    mat-palette(<span class="variable">$mat-red</span>);</div><div class="line"></div><div class="line"><span class="variable">$candy-app-theme</span>: mat-light-theme(<span class="variable">$candy-app-primary</span>, <span class="variable">$candy-app-accent</span>, <span class="variable">$candy-app-warn</span>);</div><div class="line"></div><div class="line">@<span class="keyword">include</span> angular-material-theme(<span class="variable">$candy-app-theme</span>);</div><div class="line"><span class="comment">// Pass the theme variable to the mixin</span></div><div class="line">@<span class="keyword">include</span> user-component-theme(<span class="variable">$candy-app-theme</span>);</div></pre></td></tr></table></figure></p>
 <p>Success, we now have a Material themed component.<br><img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen5_z2aynk.png"></p>
 
-                    
-                    
-                        <p>
-                            <a href="/2017/05/15/building-material-themed-components/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
             
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/03/28/conventional-commits/">
-                            Conventional Commits
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-03-28T20:07:57-04:00">
-	
-		    Mar 28, 2017
-    	
-    </time>
-    
-</div>
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Angular-Material/">Angular, Material</a>
 
             </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>If you’ve been following the recent Angular release canidates you can’t help but admire the changelog they are able to produce. Each version published has a nicely formated list of bugs, features, and breaking changes. How they were able to generate this type of changelog really interested me into digging deeper into their process and conventions. It turns out, implementing something like this into your workflow is actually quite simple.</p>
-<h3 id="Standarizing-Commit-Messages"><a href="#Standarizing-Commit-Messages" class="headerlink" title="Standarizing Commit Messages"></a>Standarizing Commit Messages</h3><p>The first step is to start utilizing a convention when commiting changes to your codebase. The easiest way is to use the <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/preview" target="_blank" rel="external">conventions</a> created by the AngularJS team.</p>
-<p>A more readable form of this can be found from Angular Material team’s <a href="https://github.com/angular/material2/blob/master/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="external">Code Convention Guidelines</a>. At a minimum, each commit message contains a <em>type</em>, <em>scope</em> and <em>subject</em>.  In the following format:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</div></pre></td></tr></table></figure>
-<h3 id="Add-Tooling"><a href="#Add-Tooling" class="headerlink" title="Add Tooling"></a>Add Tooling</h3><p>Making sure we commit changes using this format can be teadius at first. To make life easier add <a href="http://Commitizen.github.io/cz-cli/" target="_blank" rel="external">Commitizen</a> as a development dependency.  This provides a command line utlity that will walk you through each portion of the commit message.</p>
-<p>Install commitizen<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add commitizen -D</div></pre></td></tr></table></figure></p>
-<p>Add <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank" rel="external">conventional-cz</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add cz-conventional-changelog -D</div></pre></td></tr></table></figure></p>
-<p>Update <code>package.json</code><br>First add a new script named commit which executes <code>git-cz</code> (Commitizen)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">scripts : &#123;</div><div class="line">    &quot;commit&quot;: &quot;git-cz&quot;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Then add an additional block called config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;config&quot;: &#123;</div><div class="line">    &quot;commitizen&quot;: &#123;</div><div class="line">      &quot;path&quot;: &quot;cz-conventional-changelog&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Stage your changes by running <code>git add .</code> followed by <code>npm run commit</code>.<br><img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1490656960/conventional-commits1_fc70yy.gif"></p>
-<p>Success!</p>
-<h3 id="Preventing-Poor-Commit-Messages"><a href="#Preventing-Poor-Commit-Messages" class="headerlink" title="Preventing Poor Commit Messages"></a>Preventing Poor Commit Messages</h3><p>Having this tooling is great, but what about that one developer that just doesn’t seem to get it and is stuck in their ways? Thankfully, preventing commits that do not meet the convention is simple to do by installing a <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks" target="_blank" rel="external">git hook</a>. But to be honest, I’ve never configured a Git hook. Thankfully, <a href="https://github.com/typicode/husky" target="_blank" rel="external">Husky</a> makes configuration painless.</p>
-<p>First install Husky:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add husky -D</div></pre></td></tr></table></figure></p>
-<p>Next install <a href="https://github.com/kentcdodds/validate-commit-msg" target="_blank" rel="external">validate-commit-msg</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add validate-commit-msg -D</div></pre></td></tr></table></figure></p>
-<p>Update your <code>package.json</code> scripts:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">scripts: &#123;</div><div class="line">    &quot;commitmsg&quot;: &quot;validate-commit-msg&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Now any commit messages that do not follow the convention will error to the developer.</p>
-<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1490660503/conventional-commits2_vgu3nh.gif">
-<h3 id="Generating-a-Changlog-and-Versioning"><a href="#Generating-a-Changlog-and-Versioning" class="headerlink" title="Generating a Changlog and Versioning"></a>Generating a Changlog and Versioning</h3><p>Now that our project is setup lets see the added benefits this provides. To kick off the next step we are going to install <code>standard-version</code>. This plugin not only will generate the proper version for our project, but it will also create a change log with proper commit hashes, and issue numbers. </p>
-<p>Install standard-version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add standard-version -D</div></pre></td></tr></table></figure></p>
-<p>Update your <code>package.json</code> scripts:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">scripts: &#123;</div><div class="line">    &quot;release&quot;: &quot;standard-version&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Run <code>npm run release</code>. This will examine your Git history and based off your commits generate the proper version and a CHANGELOG.md.</p>
-<hr>
-<h3 id="Demoing-This-Process-to-Your-Team"><a href="#Demoing-This-Process-to-Your-Team" class="headerlink" title="Demoing This Process to Your Team"></a>Demoing This Process to Your Team</h3><p>To help demo how this would work in the real world, I’ve setup a repository with everything configured. First <a href="https://github.com/devboosts/conventional-commits" target="_blank" rel="external">fork this repository</a>.</p>
-<p>With the newly forked project lets enable Issue tracking. This will give us a feel for how this would work when we collaborate on a real project.</p>
-<ul>
-<li>Open the project’s settings in GitHub and enable <strong>Features &gt; Issues</strong></li>
-<li>Create a new issue called <strong>feat: Implement Footer</strong></li>
-<li>Clone your forked repository</li>
-<li>Verify you’re in the newly created directory and run <code>npm install</code> (or <code>yarn</code>)</li>
-<li>Create a new branch by running <code>git branch feat/footer</code></li>
-<li>Open <code>./src/index.html</code> and add a <code>footer</code> element</li>
-<li>Save your changes</li>
-<li>From the CLI run <code>git add .</code> followed by <code>npm run commit</code></li>
-</ul>
-<p>Follow the prompts adding, using the following information:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">type:feature</div><div class="line">scope: index</div><div class="line">short description: added a footer</div><div class="line">long description: &lt;empty&gt;</div><div class="line">breaking changes: &lt;empty&gt;</div><div class="line">issues closed: &lt;enter your issue number ie. #1&gt;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>Push your changes to GitHub with <code>git push</code></li>
-<li>Next open a pull request and merge your changes in</li>
-</ul>
-<p>Notice the <code>CHANGELOG.md</code> and <code>package.json</code> version are unchanged.  The reason they haven’t been updated is because we need to first cut a release. Let’s do that now.</p>
-<ul>
-<li>From your command line switch back to master by running <code>git checkout master</code></li>
-<li>Pull in your latest changes by running <code>git pull</code></li>
-<li>Run <code>npm run release</code></li>
-</ul>
-<p>This runs <a href="https://github.com/conventional-changelog/standard-version" target="_blank" rel="external">standard-version</a> which examines your commit history to properly update the <code>CHANGELOG.md</code>, version in <code>package.json</code>, and tags a branch in your repository.<br>Finally, run <code>git push --follow-tags origin master</code> to push your version changes and tag your repository with this version.</p>
-<h3 id="Beyond…"><a href="#Beyond…" class="headerlink" title="Beyond…"></a>Beyond…</h3><p>Checkout this great <a href="https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen" target="_blank" rel="external">plugin</a> for VSCode. It integrates with commitizen and provides a wizard like experience.</p>
-<p>I haven’t actually tried this out yet, but to take things to the next level you could look into <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="external">semantic-release</a>. It promises fully automated packaging and releasing.  Basically, what standard-version does, with the added benefit of integrations with GitHub and Travis CI.</p>
-
-                    
-                    
-                        <p>
-                            <a href="/2017/03/28/conventional-commits/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/08/top-10-vs-code-extensions/">
-                            Top 10 Angular VS Code Extensions
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-08T01:00:00-05:00">
-	
-		    Feb 08, 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-excerpt" itemprop="articleBody">
-                    <p>I’ve been using Visual Studio Code now for over a year and absolutely love the productivity it’s given me.  Previously, my go to editor was Visual Studio 2015, mostly due to working with ASP.NET Web Forms.  Now that I’m focusing more on front end development and Angular, I don’t think I’d start a new project without VS Code by my side.</p>
-                    
-                        <a href="/2017/02/08/top-10-vs-code-extensions/" class="postShorten-excerpt_link link">
-                            Continue reading
-                        </a>
-                        
-                    
-                </div>
-            
-        </div>
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/28/conventional-commits/" data-tooltip="Conventional Commits">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
         
-    </article>
-    
-    
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title" itemprop="headline">
-                    
-                        <a class="link-unstyled" href="/2017/02/04/Recommend-VS-Code-Extensions-For-Your-Repository/">
-                            Project Recommended VS Code Extensions
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
-    <time itemprop="datePublished" datetime="2017-02-04T14:53:00-05:00">
-	
-		    Feb 04, 2017
-    	
-    </time>
-    
-</div>
-
-            </div>
-            
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>One of my favorite aspects of <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t live without.</p>
-<p>When developing an application with a framework like Angular, there may be a handful of extensions your team finds useful to use. VS Code makes sharing these extentions is actually quite easy.</p>
-<p>Open the command pallet (<code>F1</code>) and type <code>Extensions: Configured Recommended Extensions (Workspace)</code>. This will create a file named <code>extensions.json</code> in your <code>.vscode</code> folder. Edit the file by supplying a list of extensions by <code>${publisher}.${name}</code>. For example:</p>
-<figure class="highlight javascript"><figcaption><span>extensions.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="comment">// See http://go.microsoft.com/fwlink/?LinkId=827846</span></div><div class="line">	<span class="comment">// for the documentation about the extensions.json format</span></div><div class="line">	<span class="string">"recommendations"</span>: [</div><div class="line">		<span class="comment">// Extension identifier format: $&#123;publisher&#125;.$&#123;name&#125;. Example: vscode.csharp</span></div><div class="line">		msjsdiag.debugger-<span class="keyword">for</span>-chrome  <span class="comment">// Debugging In Chrome</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>The publisher of the extension is listed beside the extension name when you open the extension in the Marketplace. Add a comment next to each extension to specify why the extension is useful. Save and commit to the repository.</p>
-<img src="/assets/images/vs-code.jpg">
-<p>Next time a team member opens the project in VS Code, they will be greeted with a message to install the workspace’s recommended extensions. </p>
-
-                    
-                    
-                        <p>
-                            <a href="/2017/02/04/Recommend-VS-Code-Extensions-For-Your-Repository/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
-            
-        </div>
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
-        
-        
-        <li class="pagination-number">page 1 of 1</li>
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
 
 
 
@@ -452,6 +341,89 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/03/28/conventional-commits/" data-tooltip="Conventional Commits">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-google-plus"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-facebook-official"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-twitter"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+    <ul class="share-options">
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-google-plus"></i><span class="">Share on Google Plus</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+            </a>
+        </li>
+        <li class="share-option">
+            <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://devboosts.com/2017/05/15/building-material-themed-components/">
+                <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
             
         </div>
         
@@ -498,6 +470,25 @@
     <!--SCRIPTS-->
 <script src="/assets/js/script-i4qo6jx6jji9fg0dftpya6ivemizsbow4fhow76d8dwpm7m1wbvi378ssumx.min.js"></script>
 <!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'http://devboosts.com/2017/05/15/building-material-themed-components/';
+                 
+                    this.page.identifier = '2017/05/15/building-material-themed-components/';
+                                  
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'devboosts-com';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
 
 
 

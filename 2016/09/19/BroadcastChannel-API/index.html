@@ -17,16 +17,16 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
+    <meta name="description" content="Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="BroadcastChannel API">
 <meta property="og:url" content="http://devboosts.com/2016/09/19/BroadcastChannel-API/index.html">
 <meta property="og:site_name" content="DevBoosts">
-<meta property="og:description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
-<meta property="og:updated_time" content="2017-02-02T01:31:48.995Z">
+<meta property="og:description" content="Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service">
+<meta property="og:updated_time" content="2017-05-13T14:55:30.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BroadcastChannel API">
-<meta name="twitter:description" content="Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service w">
+<meta name="twitter:description" content="Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service">
 <meta name="twitter:creator" content="@cgatian">
     
     
@@ -215,7 +215,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>Early last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
+            <p>Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
 <p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
 <p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
