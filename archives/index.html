@@ -197,7 +197,7 @@
 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -219,43 +219,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>If you’ve pulled in <a href="https://material.angular.io" target="_blank" rel="external">Material Design Components</a> into your Angular application,<br>you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you application. In this post I will show you how to create themed components using the existing theme mixins provided by Material. This will not work if you’re using one of the built-in themes.</p>
-<p>If you already know the basics you can skip down to <a href="#building-theme">Building a Themed Component</a></p>
-<h3 id="Setup"><a href="#Setup" class="headerlink" title="Setup"></a>Setup</h3><p>For this project we are going to use the <a href="https://github.com/angular/angular-cli" target="_blank" rel="external">Angular CLI</a> to build your project. However, this tutorial will work with any project.</p>
-<p>To start create a fresh Angular CLI project and follow the <a href="https://material.angular.io/guide/getting-started" target="_blank" rel="external">Getting Started Guide</a> <strong>steps one through three</strong>. </p>
-<p>Next we will create a new file named <code>theme.scss</code> file in the <code>./src</code> folder of your Angular project. This file will provide the theme for our application.</p>
-<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/c_scale,h_474/v1494792370/screen1_rgywut.png">
-<p>Next open <code>angular-cli.json</code> and add a reference to <code>theme.scss</code>.</p>
-<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen2_yzc3ss.png">
-<p>Open <code>theme.scss</code> and add the candy-app theme provided in the <a href="https://material.angular.io/guide/theming" target="_blank" rel="external">material theme guide</a>.</p>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">'~@angular/material/theming'</span>;</div><div class="line"></div><div class="line">@<span class="keyword">include</span> mat-core();</div><div class="line"></div><div class="line"><span class="variable">$candy-app-primary</span>: mat-palette(<span class="variable">$mat-indigo</span>);</div><div class="line"><span class="variable">$candy-app-accent</span>:  mat-palette(<span class="variable">$mat-pink</span>, A200, A100, A400);</div><div class="line"><span class="variable">$candy-app-warn</span>:    mat-palette(<span class="variable">$mat-red</span>);</div><div class="line"></div><div class="line"><span class="variable">$candy-app-theme</span>: mat-light-theme(<span class="variable">$candy-app-primary</span>, <span class="variable">$candy-app-accent</span>, <span class="variable">$candy-app-warn</span>);</div></pre></td></tr></table></figure>
-<p>Open <code>app.component.html</code> and add a button to verify the setup.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">  &#123;&#123;title&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">md-raised-button</span> <span class="attr">color</span>=<span class="string">"accent"</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>Run <code>npm start</code> and verify your builds and displays renders the page below.</p>
-<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen3_xuq4aq.png">
-<h3 id="Create-A-New-Component"><a href="#Create-A-New-Component" class="headerlink" title="Create A New Component"></a>Create A New Component</h3><p>Now with our application is configured with a Material Theme we can build a component to utilize our theme.</p>
-<p>First, create a new component in your project called <code>UserComponent</code>. This component is simply going to take an <code>Input</code> of <code>name</code> and display it within a <code>span</code> element.</p>
-<p><strong>user.component.ts</strong><br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component, Input &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line"><span class="meta">@Component</span>(&#123;</div><div class="line">  selector: <span class="string">'app-user'</span>,</div><div class="line">  templateUrl: <span class="string">'./user.component.html'</span>,</div><div class="line">  styleUrls: [<span class="string">'./user.component.scss'</span>]</div><div class="line">&#125;)</div><div class="line"><span class="keyword">export</span> <span class="keyword">class</span> UserComponent &#123;</div><div class="line">  <span class="meta">@Input</span>() name: <span class="built_in">string</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><strong>user.component.html</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"user"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>Name: &#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p><strong>user.component.scss</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.user</span> &#123;</div><div class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid green;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Update <code>app.module.ts</code> to include your new component, and drop your component into <code>app.component.html</code>.<br><strong>app.component.html</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">  &#123;&#123;title&#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">app-user</span> <span class="attr">name</span>=<span class="string">"Dawson"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-user</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">md-raised-button</span> <span class="attr">color</span>=<span class="string">"accent"</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>The result:</p>
-<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen4_rwa6rn.png">
-<h3 id="Building-a-Themed-Component"><a href="#Building-a-Themed-Component" class="headerlink" title=" Building a Themed Component"></a><a name="building-theme"></a> Building a Themed Component</h3><p>So far we’ve added Material and created a new compnent that has some styles defined. Next we are going to add the secondary color from our Material Theme and add it as the background to the component.</p>
-<p>First, create a new file called <code>user.component-theme.scss</code>. It’s important to note we are not using the existing <code>user.component.scss</code> file.<br>Understand that we are seperating the concerns of the stylesheets, the <code>user.component.scss</code> will be responsible all our <strong>non-theme</strong> CSS styles, and the <code>user.component-theme.scss</code> is used for all <strong>themed</strong> CSS styles, defined by our Material theme.</p>
-<p>Just to reitterate, it’s fine to have color properties in <code>user.component.scss</code> but just not ones specific to your material theme, e.g. a green border from our example.</p>
-<p>Open <code>user.component-theme.scss</code> and add the following:<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Import Material Mixins</span></div><div class="line">@<span class="keyword">import</span> <span class="string">'~@angular/material/theming'</span>;</div><div class="line"></div><div class="line"><span class="comment">// Define a custom mixin that takes in the current theme</span></div><div class="line">@<span class="keyword">mixin</span> user-component-theme(<span class="variable">$theme</span>) &#123;</div><div class="line"></div><div class="line">  <span class="comment">// Parse the theme and create variables for each color in the pallete</span></div><div class="line">  <span class="variable">$primary</span>: map-get(<span class="variable">$theme</span>, primary);</div><div class="line">  <span class="variable">$accent</span>: map-get(<span class="variable">$theme</span>, accent);</div><div class="line">  <span class="variable">$warn</span>: map-get(<span class="variable">$theme</span>, warn);</div><div class="line"></div><div class="line">  <span class="comment">// Create theme specfic styles</span></div><div class="line">  <span class="selector-class">.user-theme</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: mat-color(<span class="variable">$accent</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Open <code>theme.scss</code> and import the mixin.<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">'~@angular/material/theming'</span>;</div><div class="line"><span class="comment">// Imports the custom mixin</span></div><div class="line">@<span class="keyword">import</span> <span class="string">'./app/components/user/user.component-theme'</span>;</div><div class="line"></div><div class="line">@<span class="keyword">include</span> mat-core();</div><div class="line"></div><div class="line"><span class="variable">$candy-app-primary</span>: mat-palette(<span class="variable">$mat-indigo</span>);</div><div class="line"><span class="variable">$candy-app-accent</span>:  mat-palette(<span class="variable">$mat-pink</span>, A200, A100, A400);</div><div class="line"><span class="variable">$candy-app-warn</span>:    mat-palette(<span class="variable">$mat-red</span>);</div><div class="line"></div><div class="line"><span class="variable">$candy-app-theme</span>: mat-light-theme(<span class="variable">$candy-app-primary</span>, <span class="variable">$candy-app-accent</span>, <span class="variable">$candy-app-warn</span>);</div><div class="line"></div><div class="line">@<span class="keyword">include</span> angular-material-theme(<span class="variable">$candy-app-theme</span>);</div><div class="line"><span class="comment">// Pass the theme variable to the mixin</span></div><div class="line">@<span class="keyword">include</span> user-component-theme(<span class="variable">$candy-app-theme</span>);</div></pre></td></tr></table></figure></p>
-<p>Success, we now have a Material themed component.<br><img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1494792370/screen5_z2aynk.png"></p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>If you’ve pulled in <a href="https://material.angular.io">Material Design Components</a> into your Angular application,<br>you inevitability will find youself wanting to keep your component’s colors consistant with the theme of the rest of you application. In this post I will show you how to create themed components using the existing theme mixins provided by Material. This will not work if you’re using one of the built-in themes.<br>
                     
-                    
-                        <p>
-                            <a href="/2017/05/15/building-material-themed-components/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2017/05/15/building-material-themed-components/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
@@ -264,7 +234,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -286,63 +256,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>If you’ve been following the recent Angular release canidates you can’t help but admire the changelog they are able to produce. Each version published has a nicely formated list of bugs, features, and breaking changes. How they were able to generate this type of changelog really interested me into digging deeper into their process and conventions. It turns out, implementing something like this into your workflow is actually quite simple.</p>
-<h3 id="Standarizing-Commit-Messages"><a href="#Standarizing-Commit-Messages" class="headerlink" title="Standarizing Commit Messages"></a>Standarizing Commit Messages</h3><p>The first step is to start utilizing a convention when commiting changes to your codebase. The easiest way is to use the <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/preview" target="_blank" rel="external">conventions</a> created by the AngularJS team.</p>
-<p>A more readable form of this can be found from Angular Material team’s <a href="https://github.com/angular/material2/blob/master/CONTRIBUTING.md#-commit-message-guidelines" target="_blank" rel="external">Code Convention Guidelines</a>. At a minimum, each commit message contains a <em>type</em>, <em>scope</em> and <em>subject</em>.  In the following format:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</div></pre></td></tr></table></figure>
-<h3 id="Add-Tooling"><a href="#Add-Tooling" class="headerlink" title="Add Tooling"></a>Add Tooling</h3><p>Making sure we commit changes using this format can be teadius at first. To make life easier add <a href="http://Commitizen.github.io/cz-cli/" target="_blank" rel="external">Commitizen</a> as a development dependency.  This provides a command line utlity that will walk you through each portion of the commit message.</p>
-<p>Install commitizen<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add commitizen -D</div></pre></td></tr></table></figure></p>
-<p>Add <a href="https://github.com/commitizen/cz-conventional-changelog" target="_blank" rel="external">conventional-cz</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add cz-conventional-changelog -D</div></pre></td></tr></table></figure></p>
-<p>Update <code>package.json</code><br>First add a new script named commit which executes <code>git-cz</code> (Commitizen)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">scripts : &#123;</div><div class="line">    &quot;commit&quot;: &quot;git-cz&quot;</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Then add an additional block called config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;config&quot;: &#123;</div><div class="line">    &quot;commitizen&quot;: &#123;</div><div class="line">      &quot;path&quot;: &quot;cz-conventional-changelog&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Stage your changes by running <code>git add .</code> followed by <code>npm run commit</code>.<br><img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1490656960/conventional-commits1_fc70yy.gif"></p>
-<p>Success!</p>
-<h3 id="Preventing-Poor-Commit-Messages"><a href="#Preventing-Poor-Commit-Messages" class="headerlink" title="Preventing Poor Commit Messages"></a>Preventing Poor Commit Messages</h3><p>Having this tooling is great, but what about that one developer that just doesn’t seem to get it and is stuck in their ways? Thankfully, preventing commits that do not meet the convention is simple to do by installing a <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks" target="_blank" rel="external">git hook</a>. But to be honest, I’ve never configured a Git hook. Thankfully, <a href="https://github.com/typicode/husky" target="_blank" rel="external">Husky</a> makes configuration painless.</p>
-<p>First install Husky:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add husky -D</div></pre></td></tr></table></figure></p>
-<p>Next install <a href="https://github.com/kentcdodds/validate-commit-msg" target="_blank" rel="external">validate-commit-msg</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add validate-commit-msg -D</div></pre></td></tr></table></figure></p>
-<p>Update your <code>package.json</code> scripts:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">scripts: &#123;</div><div class="line">    &quot;commitmsg&quot;: &quot;validate-commit-msg&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Now any commit messages that do not follow the convention will error to the developer.</p>
-<img src="http://res.cloudinary.com/dk1rn2kmf/image/upload/v1490660503/conventional-commits2_vgu3nh.gif">
-<h3 id="Generating-a-Changlog-and-Versioning"><a href="#Generating-a-Changlog-and-Versioning" class="headerlink" title="Generating a Changlog and Versioning"></a>Generating a Changlog and Versioning</h3><p>Now that our project is setup lets see the added benefits this provides. To kick off the next step we are going to install <code>standard-version</code>. This plugin not only will generate the proper version for our project, but it will also create a change log with proper commit hashes, and issue numbers. </p>
-<p>Install standard-version<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yarn add standard-version -D</div></pre></td></tr></table></figure></p>
-<p>Update your <code>package.json</code> scripts:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">scripts: &#123;</div><div class="line">    &quot;release&quot;: &quot;standard-version&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>Run <code>npm run release</code>. This will examine your Git history and based off your commits generate the proper version and a CHANGELOG.md.</p>
-<hr>
-<h3 id="Demoing-This-Process-to-Your-Team"><a href="#Demoing-This-Process-to-Your-Team" class="headerlink" title="Demoing This Process to Your Team"></a>Demoing This Process to Your Team</h3><p>To help demo how this would work in the real world, I’ve setup a repository with everything configured. First <a href="https://github.com/devboosts/conventional-commits" target="_blank" rel="external">fork this repository</a>.</p>
-<p>With the newly forked project lets enable Issue tracking. This will give us a feel for how this would work when we collaborate on a real project.</p>
-<ul>
-<li>Open the project’s settings in GitHub and enable <strong>Features &gt; Issues</strong></li>
-<li>Create a new issue called <strong>feat: Implement Footer</strong></li>
-<li>Clone your forked repository</li>
-<li>Verify you’re in the newly created directory and run <code>npm install</code> (or <code>yarn</code>)</li>
-<li>Create a new branch by running <code>git branch feat/footer</code></li>
-<li>Open <code>./src/index.html</code> and add a <code>footer</code> element</li>
-<li>Save your changes</li>
-<li>From the CLI run <code>git add .</code> followed by <code>npm run commit</code></li>
-</ul>
-<p>Follow the prompts adding, using the following information:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">type:feature</div><div class="line">scope: index</div><div class="line">short description: added a footer</div><div class="line">long description: &lt;empty&gt;</div><div class="line">breaking changes: &lt;empty&gt;</div><div class="line">issues closed: &lt;enter your issue number ie. #1&gt;</div></pre></td></tr></table></figure></p>
-<ul>
-<li>Push your changes to GitHub with <code>git push</code></li>
-<li>Next open a pull request and merge your changes in</li>
-</ul>
-<p>Notice the <code>CHANGELOG.md</code> and <code>package.json</code> version are unchanged.  The reason they haven’t been updated is because we need to first cut a release. Let’s do that now.</p>
-<ul>
-<li>From your command line switch back to master by running <code>git checkout master</code></li>
-<li>Pull in your latest changes by running <code>git pull</code></li>
-<li>Run <code>npm run release</code></li>
-</ul>
-<p>This runs <a href="https://github.com/conventional-changelog/standard-version" target="_blank" rel="external">standard-version</a> which examines your commit history to properly update the <code>CHANGELOG.md</code>, version in <code>package.json</code>, and tags a branch in your repository.<br>Finally, run <code>git push --follow-tags origin master</code> to push your version changes and tag your repository with this version.</p>
-<h3 id="Beyond…"><a href="#Beyond…" class="headerlink" title="Beyond…"></a>Beyond…</h3><p>Checkout this great <a href="https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen" target="_blank" rel="external">plugin</a> for VSCode. It integrates with commitizen and provides a wizard like experience.</p>
-<p>I haven’t actually tried this out yet, but to take things to the next level you could look into <a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="external">semantic-release</a>. It promises fully automated packaging and releasing.  Basically, what standard-version does, with the added benefit of integrations with GitHub and Travis CI.</p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>If you’ve been following the recent Angular release canidates you can’t help but admire the changelog they are able to produce. Each version published has a nicely formated list of bugs, features, and breaking changes. How they were able to generate this type of changelog really interested me into digging deeper into their process and conventions. It turns out, implementing something like this into your workflow is actually quite simple.<br>
                     
-                    
-                        <p>
-                            <a href="/2017/03/28/conventional-commits/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2017/03/28/conventional-commits/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
@@ -388,7 +308,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -410,22 +330,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>One of my favorite aspects of <a href="https://code.visualstudio.com/" target="_blank" rel="external">Visual Studio Code</a> is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t live without.</p>
-<p>When developing an application with a framework like Angular, there may be a handful of extensions your team finds useful to use. VS Code makes sharing these extentions is actually quite easy.</p>
-<p>Open the command pallet (<code>F1</code>) and type <code>Extensions: Configured Recommended Extensions (Workspace)</code>. This will create a file named <code>extensions.json</code> in your <code>.vscode</code> folder. Edit the file by supplying a list of extensions by <code>${publisher}.${name}</code>. For example:</p>
-<figure class="highlight javascript"><figcaption><span>extensions.json</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">	<span class="comment">// See http://go.microsoft.com/fwlink/?LinkId=827846</span></div><div class="line">	<span class="comment">// for the documentation about the extensions.json format</span></div><div class="line">	<span class="string">"recommendations"</span>: [</div><div class="line">		<span class="comment">// Extension identifier format: $&#123;publisher&#125;.$&#123;name&#125;. Example: vscode.csharp</span></div><div class="line">		msjsdiag.debugger-<span class="keyword">for</span>-chrome  <span class="comment">// Debugging In Chrome</span></div><div class="line">	]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>The publisher of the extension is listed beside the extension name when you open the extension in the Marketplace. Add a comment next to each extension to specify why the extension is useful. Save and commit to the repository.</p>
-<img src="/assets/images/vs-code.jpg">
-<p>Next time a team member opens the project in VS Code, they will be greeted with a message to install the workspace’s recommended extensions. </p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>One of my favorite aspects of <a href="https://code.visualstudio.com/">Visual Studio Code</a> is the vibrant library of commumnity created extensions. While the IDE is great out of the box, these extensions give an added boost you just can’t live without.<br>
                     
-                    
-                        <p>
-                            <a href="/2017/02/04/Recommend-VS-Code-Extensions-For-Your-Repository/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2017/02/04/Recommend-VS-Code-Extensions-For-Your-Repository/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
@@ -434,7 +345,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -456,19 +367,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to perform date and currency conversions.  This allows language specific formatting to be preformed directly by the browser.</p>
-<p>To contrast, in AngularJS a developer would be required to load a culture specific helper script that would provide the proper formats per culture.  With Angular and a modern browser, this is functionality is supported out-of-the-box.</p>
-<p>The Internationalization API is supported in the following browsers, to get Angular pipes to work with older IE and Safari 9 a polyfill is required.</p>
-<p>Can I Use internationalization? <a href="http://caniuse.com/#feat=internationalization" target="_blank" rel="external">Checkout the support</a> for the internationalization API across the major browsers from <a href="http://caniuse.com" target="_blank" rel="external">caniuse.com</a>.</p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>I was recently looking into how Angular differs from AngularJS in regards to internationalization (also known as i18n).  I was delighted to see Angular makes use of the Internationalization API to perform date and currency conversions.  This allows language specific formatting to be preformed directly by the browser.<br>
                     
-                    
-                        <p>
-                            <a href="/2016/09/28/Angular-vs-AngularJS-i18n/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2016/09/28/Angular-vs-AngularJS-i18n/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
@@ -477,7 +382,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -499,20 +404,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p><a href="https://github.com/zloirock/core-js" target="_blank" rel="external">core-js</a> is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web comm<br>Previously, it has gained serious reputation by use of Babel, which utilizes it for many of its polyfills.<br><a href="https://github.com/angular/angular/commit/66df335998d097fa8fe46dec41f1183737332021" target="_blank" rel="external">Most recently</a>, it was pulled into Angular as the de facto standard for shimming older IE 9-10 with ES2015 features.</p>
-<p>What makes core-js unique is how beautifully architected it is.  Each polyfill can be pulled in individually, making it a truly modular library.  As with other libraries such as es6-shim a developer would need to require the entire library to make use of one ES2015 feature like promises.  With core-js a developer can simply import a Promise polyfill with one import.</p>
-<p>For example, using a bundler such as Webpack, you can compose your own polyfill.js with only the polyfills the application requires.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/map'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/set'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/weak-map'</span>);</div><div class="line"><span class="built_in">require</span>(<span class="string">'core-js/fn/promise'</span>);</div></pre></td></tr></table></figure></p>
-<p>More impressively core-js’s <a href="https://github.com/zloirock/core-js#supported-engines" target="_blank" rel="external">browser support</a> goes all the way back to IE6.</p>
-<p>If you’re looking for a one-stop shop library to provide polyfills, core-js is it!</p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p><a href="https://github.com/zloirock/core-js">core-js</a> is a modular library created by Denis Pushkarev that’s recently been opening some eyes in the web comm<br>Previously, it has gained serious reputation by use of Babel, which utilizes it for many of its polyfills.<br><a href="https://github.com/angular/angular/commit/66df335998d097fa8fe46dec41f1183737332021">Most recently</a>, it was pulled into Angular as the de facto standard for shimming older IE 9-10 with ES2015 features.<br>
                     
-                    
-                        <p>
-                            <a href="/2016/09/21/core-js-Merged-into-Angular/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2016/09/21/core-js-Merged-into-Angular/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
@@ -521,7 +419,7 @@
     </article>
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -543,23 +441,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
-<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
-<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
-<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
-<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
-<p>BroadcastChannel API Browser Support</p>
-<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.<br>
                     
-                    
-                        <p>
-                            <a href="/2016/09/19/BroadcastChannel-API/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2016/09/19/BroadcastChannel-API/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             

@@ -197,7 +197,7 @@
 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+    <article class="postShorten postShorten--thumbnailimg-right" itemscope itemType="http://schema.org/BlogPosting">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -219,23 +219,13 @@
 
             </div>
             
-                <div class="postShorten-content" itemprop="articleBody">
-                    <p>Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> popup = <span class="built_in">window</span>.open(<span class="string">'https://www.coolwebsite.com'</span>);</div><div class="line">popup.postMessage(<span class="string">'Hello From Dev Boostie!'</span>);</div></pre></td></tr></table></figure>
-<p>We all know maintaining references to windows is hard, right?  If you’re not accustomed to it, the process goes something like this.  Open a window, register it with an in memory collection.  When the window closes, send an event to the parent and cleanup the reference.  While it doesn’t sound too bad, managing these window references can become a serious pain and it’s tough to get right.</p>
-<p>Thankfully BroadcastChannel API solves this.  It provides the ability to send messages to all windows/tabs without knowledge of their existence.  No more in memory window management!</p>
-<p>The one downside to the BroadcastChannel API is it only works with same origin.  If you want two windows to communicate with each other window.postMessage is the way to go.</p>
-<p>For more on the BroadcastChannel API checkout this blog post from Google.</p>
-<p>BroadcastChannel API Browser Support</p>
-<p>Can I Use broadcastchannel? Data on support for the broadcastchannel feature across the major browsers from <a href="http://caniuse.com/#feat=broadcastchannel" target="_blank" rel="external">caniuse.com</a>.</p>
-
+                <div class="postShorten-excerpt" itemprop="articleBody">
+                    <p>Earlier last week, Chrome posted the new features coming in Chrome 54. One of the features that stood out was Broadcast channel.  This API facilitates communicate with other windows, tabs, and service workers running within the same origin.  It sounds oddly familiar to window.postMessage API, which allows you to do the same window to window communication.  The big difference here is, window.postMessage requires you to maintain a reference to the window you want to communicate with.<br>
                     
-                    
-                        <p>
-                            <a href="/2016/09/19/BroadcastChannel-API/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
+                        <a href="/2016/09/19/BroadcastChannel-API/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
+                        
                     
                 </div>
             
